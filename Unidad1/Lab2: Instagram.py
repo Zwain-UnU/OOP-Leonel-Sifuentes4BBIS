@@ -112,3 +112,4 @@ posteo.show()
 usuario2.comentar("Muy bueno tu post", "2023-10-27", 0, posteo)
 
 usuario1.enviar_mensaje(usuario2, "Hola Omar, gracias por el comentario", "youtube.com", "img.jpg", "2023-10-27", "sticker_feliz")
+
