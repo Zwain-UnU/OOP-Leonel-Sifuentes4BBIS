@@ -13,3 +13,4 @@ post1 = Post("My first post", user1)
 print(post1.author.name)
 
 
+

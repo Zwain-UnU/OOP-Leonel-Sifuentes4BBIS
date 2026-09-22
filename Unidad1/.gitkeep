@@ -1,0 +1,7 @@
+
+#ACTUALIZAR REPO CON GIT
+#git status
+#git add Unidad1/script_Exam.py
+#git commit -m "Anadir Script Exam"
+#git push origin main
+
