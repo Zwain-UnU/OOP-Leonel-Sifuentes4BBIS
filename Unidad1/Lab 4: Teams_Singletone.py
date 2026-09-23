@@ -1,10 +1,10 @@
 class ConfiguracionTienda:
     _instancia = None
 
-    def __new__(cls, *args, **kwargs):
+    def __new__(cls):
         if cls._instancia is None:
             cls._instancia = super().__new__(cls)
-            cls._instancia.nombre = "Super Tienda"
+            cls._instancia.nombre = "Mi Tienda Central"
             cls._instancia.impuesto = 0.16
             cls._instancia.moneda = "MXN"
         return cls._instancia
@@ -48,7 +48,7 @@ class Pedido:
         self.estado = nuevo_estado
 
     def mostrar_pedido(self):
-        print(f"\n--- {self.configuracion.nombre} ---")
+        print(f"\nTienda: {self.configuracion.nombre}")
         print(f"Pedido #{self.numero}")
         print(f"Cliente: {self.cliente}")
         print(f"Estado: {self.estado}")
