@@ -1,3 +1,15 @@
+class ConfiguracionTienda:
+    _instancia = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instancia is None:
+            cls._instancia = super().__new__(cls)
+            cls._instancia.nombre = "Super Tienda"
+            cls._instancia.impuesto = 0.16
+            cls._instancia.moneda = "MXN"
+        return cls._instancia
+
+
 class Producto:
     def __init__(self, nombre, precio, tipo):
         self.nombre = nombre
@@ -11,6 +23,7 @@ class Pedido:
         self.cliente = cliente
         self.productos = []
         self.estado = "CREADO"
+        self.configuracion = ConfiguracionTienda()
 
     def agregar_producto(self, producto):
         self.productos.append(producto)
@@ -35,7 +48,8 @@ class Pedido:
         self.estado = nuevo_estado
 
     def mostrar_pedido(self):
-        print(f"\nPedido #{self.numero}")
+        print(f"\n--- {self.configuracion.nombre} ---")
+        print(f"Pedido #{self.numero}")
         print(f"Cliente: {self.cliente}")
         print(f"Estado: {self.estado}")
 
@@ -44,13 +58,18 @@ class Pedido:
         for producto in self.productos:
             print(
                 f"- {producto.nombre}: "
-                f"${producto.precio:.2f}"
+                f"${producto.precio:.2f} {self.configuracion.moneda}"
             )
 
-        print(f"\nTotal: ${self.calcular_total():.2f}")
+        print(f"\nTotal: ${self.calcular_total():.2f} {self.configuracion.moneda}")
 
 
 # main program
+
+config1 = ConfiguracionTienda()
+config2 = ConfiguracionTienda()
+
+print(config1 is config2)
 
 pedido = Pedido(1001, "Ana")
 
@@ -71,4 +90,3 @@ pedido.mostrar_pedido()
 pedido.cambiar_estado("ENVIADO")
 
 print("\nNuevo estado:", pedido.estado)
-
