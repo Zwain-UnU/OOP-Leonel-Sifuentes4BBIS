@@ -28,3 +28,4 @@ root.geometry("640x400")
 ttk.Label(root, text="Hello").pack(padx=20, pady=20)
 ttk.Button(root, text="Button ola").pack(padx=20, pady=30)
 root.mainloop()
+
