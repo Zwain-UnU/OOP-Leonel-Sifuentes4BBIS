@@ -24,6 +24,7 @@ from tkinter import ttk
 root = tk.Tk()
 root.title("My application")
 root.geometry("640x400")
+root.minsize(320, 240)
 
 ttk.Label(root, text="Hello").pack(padx=20, pady=20)
 ttk.Button(root, text="Button ola").pack(padx=20, pady=30)
