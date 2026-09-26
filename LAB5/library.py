@@ -30,7 +30,6 @@ class Library:
         user = self.get_user(user_id)
         book = self.get_book(book_id)
 
-    #Security Validitys
         if user == None:
             print(f"Error, No existe el usuario: {user_id}")
             return
