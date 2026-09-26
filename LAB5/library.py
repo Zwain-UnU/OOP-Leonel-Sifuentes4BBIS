@@ -22,7 +22,7 @@ class Library:
 
     def get_book(self, book_id):
         for book in self.books:
-            if book.id_book == book.id:
+            if book.id_book == book_id:
                 return book
         return None
 
