@@ -23,3 +23,13 @@ Requeriments
 4.- A book that has already been borrowed cannot be borrowed again.
 5.- The system must allow a book to be returned.
 """
+
+library.borrow_book("001", "001")
+
+library.borrow_book("001", "001")
+
+library.show_list_books()
+
+library.return_book("001", "001")
+
+library.show_list_books()
