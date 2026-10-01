@@ -1,0 +1,58 @@
+#Sifuentes Zaragoza Leonel Ivan 4B BIS OOP EXAM UNI1
+print("\033c")
+class Ticket:
+    def __init__(self, id_ticket, description_problem):
+        self.id_ticket = id_ticket
+        self.description_problem = description_problem
+        self.status = "Pending"
+
+    def start_work(self):
+        self.status = "In Progress"
+
+    def resolve(self):
+        self.status = "Resolved"
+
+    def show_info(self):
+        print(f"Ticket {self.id_ticket}: {self.description_problem}  Status: {self.status}")
+
+
+class Developer:
+    def __init__(self, username, main_technology):
+        self.username = username
+        self.main_technology = main_technology
+        self.current_ticket = None
+
+    def assign_ticket(self, ticket):
+        self.current_ticket = ticket
+
+    def status_report(self):
+        if self.current_ticket is None:
+            print(f"{self.username} has no ticket assigned at the moment.")
+        else:
+            print(f"Status report of {self.username} ({self.main_technology}):")
+            print(f"  Assigned ticket: {self.current_ticket.id_ticket}")
+            print(f"  Description: {self.current_ticket.description_problem}")
+            print(f"  Status: {self.current_ticket.status}")
+
+
+
+dev1 = Developer("Leonel", "Python")
+ticket1 = Ticket("001", "Solve problems in the library FastAPI in Python")
+ticket2 = Ticket("002", "Restart API")
+
+
+print("Tickets created:")
+ticket1.show_info()
+ticket2.show_info()
+
+dev1.assign_ticket(ticket1)
+
+print("\nThe developer started working on it:")
+ticket1.start_work()
+
+print("\nStatus report:")
+dev1.status_report()
+
+print("\nThe developer finished the work:")
+ticket1.resolve()
+dev1.status_report()
