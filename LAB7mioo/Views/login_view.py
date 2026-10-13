@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 
 from Models.login_model import User
-from Views.home_view import HomeView
+from Views.home_view import DashboarVentana
 
 
 class LoginView:
@@ -96,5 +96,5 @@ class LoginView:
         self.root.destroy()
 
         root_dashboard = tk.Tk()
-        HomeView(root_dashboard, nombre_completo)
+        DashboarVentana(root_dashboard, nombre_completo)
         root_dashboard.mainloop()

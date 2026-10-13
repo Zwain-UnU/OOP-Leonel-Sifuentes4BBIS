@@ -1,7 +1,7 @@
 import tkinter as tk
 
 
-class HomeView:
+class DashboarVentana:
     def __init__(self, root, nombre_usuario):
         self.root = root
         self.root.title("Panel Principal")
