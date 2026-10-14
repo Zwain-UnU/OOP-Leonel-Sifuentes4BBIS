@@ -1,6 +1,6 @@
 DB_config = {
     'host': 'localhost',
-    'user': 'user',
+    'user': 'root',
     'password': '',
     'database': 'login_system_db',
     'port': 3306
