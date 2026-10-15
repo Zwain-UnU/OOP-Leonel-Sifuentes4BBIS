@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 from Models.products_model import Producto
+import os
+from PIL import Image, ImageTk
 
 class DashboardVentana:
     def __init__(self, root, nombre_usuario):
@@ -28,6 +30,28 @@ class DashboardVentana:
         # pestaña 1: Inicio
         self.frame_inicio = tk.Frame(self.notebook, bg="white")
         self.notebook.add(self.frame_inicio, text="Inicio")
+
+
+        try:
+            directorio_actual = os.path.dirname(os.path.abspath(__file__))
+            directorio_raiz = os.path.dirname(directorio_actual)
+            
+            ruta_imagen = os.path.join(directorio_raiz, "assets", "images", "alfabaluarte.jpeg")
+            
+            imagen_pil = Image.open(ruta_imagen) 
+            imagen_pil = imagen_pil.resize((80, 80), Image.Resampling.LANCZOS) 
+            self.logo_img = ImageTk.PhotoImage(imagen_pil)
+            
+            lbl_logo = tk.Label(self.root, image=self.logo_img) 
+
+            lbl_logo.pack(pady=10) #CAMBIAR POSICION AQUI
+            #EJEMPLO ARRIBA ALA IZQUIEDA CHAT
+                        #tk.Label(self.frame_inicio, image=self.dash_logo, bg="white").pack(anchor="nw", padx=20, pady=20)
+            
+            
+        except Exception as e:
+            print(f"Error cargando logo en dashboard: {e}")
+               
         
         lbl_info = tk.Label(
             self.frame_inicio, 

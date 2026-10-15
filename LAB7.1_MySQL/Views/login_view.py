@@ -61,18 +61,18 @@ class LoginView:
         )
         btn_ingresar.pack(fill="x", padx=30, pady=30)
 
-        def crear_logo(self):
-            try:
-                imagen_pil = Image.open("assets/images/alfabaluarte.jpeg") 
-                imagen_pil = imagen_pil.resize((80, 80), Image.Resampling.LANCZOS)
-                self.logo_img = ImageTk.PhotoImage(imagen_pil)
-                
-                lbl_logo = tk.Label(self.root, image=self.logo_img)
-                lbl_logo.pack(pady=5)
-            except Exception as e:
-                print(f"No se pudo cargar la imagen: {e}")
-                lbl_logo = tk.Label(self.root, text="[ LOGO ]", font=("Helvetica", 12, "italic"), fg="gray")
-                lbl_logo.pack(pady=10)
+    def crear_logo(self):
+                try:
+                    imagen_pil = Image.open("assets/images/alfabaluarte.jpeg") 
+                    imagen_pil = imagen_pil.resize((80, 80), Image.Resampling.LANCZOS)
+                    self.logo_img = ImageTk.PhotoImage(imagen_pil)
+                    
+                    lbl_logo = tk.Label(self.root, image=self.logo_img)
+                    lbl_logo.pack(pady=5)
+                except Exception as e:
+                    print(f"No se pudo cargar la imagen: {e}")
+                    lbl_logo = tk.Label(self.root, text="[ LOGO ]", font=("Helvetica", 12, "italic"), fg="gray")
+                    lbl_logo.pack(pady=10)       
 
     def validar_login(self):
         usuario_texto = self.entry_usuario.get().strip()
