@@ -13,3 +13,4 @@ CREATE TABLE productos (
     precio DECIMAL(10, 2) NOT NULL,
     stock INT NOT NULL
 );
+
