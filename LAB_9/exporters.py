@@ -13,7 +13,6 @@ class ExportadorTXT(Exportador):
         with open(ruta_archivo, 'w', encoding='utf-8') as file:
             file.write("--- REPORTE DE PRODUCTOS ---\n")
             for producto in datos:
-                # El Modelo retorna diccionarios: {'id', 'nombre', 'precio', 'stock'}
                 file.write(f"ID: {producto['id']} | Nombre: {producto['nombre']} | Precio: ${producto['precio']:.2f} | Stock: {producto['stock']}\n")
         print(f"Archivo TXT generado en: {ruta_archivo}")
 
