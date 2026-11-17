@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧩 Object-Oriented Programming (OOP)
+#  Object-Oriented Programming (OOP)
 **Academic Labs & Python Projects Repository**
 
 ![UTD](https://img.shields.io/badge/UTD-Durango-006847?style=for-the-badge)
