@@ -20,7 +20,7 @@
 | **Student** | Leonel Ivan Sifuentes Zaragoza (`@Zwain-UnU`) |
 | **Group** | 4B - BIS |
 | **Subject** | Object-Oriented Programming (OOP) |
-| **Professor** | Pedro Said Vara Chacón |
+| **Professor** | ING. Pedro Said Vara Chacón |
 | **University** | Technological University of Durango (UTD) |
 
 ---
