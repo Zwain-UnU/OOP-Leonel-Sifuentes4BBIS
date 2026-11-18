@@ -1,4 +1,4 @@
-from exceptions import CantidadInvalida, StockInsuficiente
+from Models.exceptions import CantidadInvalida, StockInsuficiente
 
 class Producto:
     def __init__(self, codigo, stock):

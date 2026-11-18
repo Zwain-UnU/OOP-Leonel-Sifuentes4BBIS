@@ -1,21 +1,19 @@
-from inventory import Inventario
-from exceptions import ErrorInventario
+from Controller.inventario_controller import InventarioController
+from Views.inventario_view import InventarioView
+
 
 def main():
-    inventario = Inventario()
-    codigo = input("Código del producto: ")
-    try:
-        cantidad = int(input("Cantidad a retirar: "))
-        inventario.retirar(codigo, cantidad)
-        print(
-            "Retiro realizado. Stock restante: ",
-            inventario.productos[codigo].stock
-        )
-        
-    except ValueError:
-        print("La cantidad debe ser un número entero.")
-    except ErrorInventario as error:
-        print(f"No se pudo realizar la operación: {error}")
-        
+    controlador = InventarioController()
+    vista = InventarioView()
+
+    codigo, cantidad = vista.solicitar_datos()
+    exito, mensaje = controlador.retirar(codigo, cantidad)
+
+    if exito:
+        vista.mostrar_resultado(mensaje)
+    else:
+        vista.mostrar_error(mensaje)
+
+
 if __name__ == "__main__":
     main()
